@@ -3,8 +3,8 @@
 $servername = "127.0.0.1";
 $username = "root";
 $password = ""; 
-$dbname = "final_canillo_db";
-$port = 3307; 
+$dbname = "if0_41113774_nuportal";
+$port = 3306; 
 
 $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
@@ -69,10 +69,24 @@ $currentSection = "";
     <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.php">NU PORTAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nuNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
             <div class="collapse navbar-collapse" id="nuNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="syllabus.php">Syllabus</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="actDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Activities
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="actDrop">
+                            <li><a class="dropdown-item" href="syllabus.php">Resources</a></li>
+                            <li><a class="dropdown-item" href="NuStrategicGoal.php">Strategic Goals</a></li>
+                            <li><a class="dropdown-item" href="mission.php">Mission & Vision</a></li>
+                            <li><a class="dropdown-item" href="schedule.php">Schedule</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
