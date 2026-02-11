@@ -2,8 +2,8 @@
 $servername = "127.0.0.1"; // The IP
 $username = "root";
 $password = ""; 
-$dbname = "final_canillo_db";
-$port = 3307; // Adding the port explicitly based on your config
+$dbname = "if0_41113774_nuportal";
+$port = 3306; // Adding the port explicitly based on your config
 
 $conn = mysqli_connect($servername, $username, $password, $dbname, $port);
 
