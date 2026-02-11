@@ -1,7 +1,7 @@
 # NU Student Portal - Web Programming Final Output
 
 ## 🌐 Live Demo
-Access the fully functional site here: [http://your-subdomain.infinityfreeapp.com](http://your-subdomain.infinityfreeapp.com)
+Access the fully functional site here: [https://nuportal.ct.ws/)
 
 ## 🛠️ Features (CRUD Operations)
 * **Create**: Submit inquiries via the "Connect With Us" form.
