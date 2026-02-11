@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         @mail($to, $subject, $body, $headers);
 
-        echo "<script>alert('Sent to Database & sumaoemilhene@gmail.com'); window.location.href='index.php';</script>";
+        echo "<script>alert('Sent to Database & shielacanillo@gmail.com'); window.location.href='index.php';</script>";
     }
 }
 ?>
