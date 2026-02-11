@@ -126,21 +126,20 @@
             <p class="fs-5 opacity-75">Education that works. Nation-building through innovation.</p>
         </div>
     </header>
-
-    <div class="container">
+<div class="container">
         <div class="row g-4 mb-5">
             <div class="col-md-6 reveal">
                 <div class="glass-card text-center h-100">
                     <div class="display-4 mb-3">👁️</div>
                     <h2>Vision</h2>
-                    <p class="lead">To be a leading provider of relevant, innovative, and accessible quality education characterized by <strong>Dynamic Filipinism</strong>.</p>
+                    <p class="lead">We are National University, <strong>a dynamic private institution committed to nation building, recognized internationally in education and research</strong>.</p>
                 </div>
             </div>
             <div class="col-md-6 reveal">
                 <div class="glass-card text-center h-100">
                     <div class="display-4 mb-3">🚀</div>
                     <h2>Mission</h2>
-                    <p class="lead">National University contributes to nation-building through progressive education and development programs.</p>
+                    <p class="lead">Guided by the core values and characterized by our cultural heritage of Dynamic Filipinism, National University is committed to providing, relevant, innovative and accessible quality education and other development programs</p>
                 </div>
             </div>
         </div>
@@ -148,13 +147,14 @@
         <h2 class="text-white text-center mb-5 reveal">CORE VALUES</h2>
         
         <div class="row g-4 justify-content-center mb-5">
+            
             <div class="col-md-4 reveal">
                 <div class="value-card shadow">
                     <div class="display-5 mb-3">⚖️</div>
-                    <h3>Integrity</h3>
+                    <h3>Compassion</h3>
                     <button class="btn btn-meaning btn-sm toggle-btn">See Meaning <span>&rsaquo;</span></button>
                     <div class="value-details">
-                        Demonstrating honesty and fairness in every action and decision, upholding the highest ethical standards of the University.
+                        Treating every individual with care, understanding, and kindness. It involves helping those in need and fostering a safe, supportive environment.
                     </div>
                 </div>
             </div>
@@ -162,10 +162,10 @@
             <div class="col-md-4 reveal">
                 <div class="value-card shadow">
                     <div class="display-5 mb-3">🤝</div>
-                    <h3>Compassion</h3>
+                    <h3>Integrity</h3>
                     <button class="btn btn-meaning btn-sm toggle-btn">See Meaning <span>&rsaquo;</span></button>
                     <div class="value-details">
-                        Fostering a culture of care and empathy, ensuring that every Nationalian supports one another and the community.
+                        Choosing to do what is right, honest, and just at all times, even when no one is watching. It involves strong ethics and reliability.
                     </div>
                 </div>
             </div>
@@ -176,12 +176,35 @@
                     <h3>Innovation</h3>
                     <button class="btn btn-meaning btn-sm toggle-btn">See Meaning <span>&rsaquo;</span></button>
                     <div class="value-details">
-                        Seeking creative ways to improve learning and solve real-world problems through advanced technology and research.
+                        Continuously introducing creative, meaningful change to improve, stay responsive to the times, and push boundaries.
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+
+            <div class="col-md-4 reveal">
+                <div class="value-card shadow">
+                    <div class="display-5 mb-3">🌱</div>
+                    <h3>Resilience</h3>
+                    <button class="btn btn-meaning btn-sm toggle-btn">See Meaning <span>&rsaquo;</span></button>
+                    <div class="value-details">
+                        The ability to adapt to change and move forward in the face of obstacles. It is characterized by maintaining strength during tough times.
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal">
+                <div class="value-card shadow">
+                    <div class="display-5 mb-3">💙</div>
+                    <h3>Patriotism</h3>
+                    <button class="btn btn-meaning btn-sm toggle-btn">See Meaning <span>&rsaquo;</span></button>
+                    <div class="value-details">
+                         Valuing the nation by showcasing Filipino culture, contributing to nation-building, and having a sense of duty toward society.
+                    </div>
+                </div>
+            </div>
+
+        </div> </div> ```
+
 
     <footer>
         <div class="container">
