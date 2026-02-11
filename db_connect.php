@@ -1,20 +1,14 @@
 <?php
-// 1. DATABASE CONNECTION DETAILS FROM INFINITYFREE
 $servername = "sql201.infinityfree.com"; // MySQL Hostname
 $username = "if0_41127983";            // MySQL Username
 $password = "VFAJSSWbWC";            // MySQL Password
-$dbname = "if0_41127983_nuportal";   // MySQL Database Name
-$port = 3306;                        // MySQL Port
+$dbname = "if0_41127983_nuportal";   // Database Name
 
-// Disable strict error reporting to handle connection issues gracefully
-mysqli_report(MYSQLI_REPORT_OFF);
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
-$conn = mysqli_connect($servername, $username, $password, $dbname, $port);
-
+// Check connection
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
-
-// Success (Uncomment for testing)
-// echo "Connected successfully to InfinityFree!"; 
 ?>
