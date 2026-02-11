@@ -101,7 +101,7 @@
 
     <header class="hero-section">
         <div class="container">
-            <h1 class="hero-title">Welcome, Nationalian!</h1>
+            <h1 class="hero-title">Welcome, Nationalians!</h1>
             <p class="fs-4">Education that works. Nation-building through innovation.</p>
         </div>
     </header>
