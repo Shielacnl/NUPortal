@@ -1,157 +1,258 @@
-<?php 
-// Include the database connection so we can "Read" the data later
-include 'db_connect.php'; 
-?>
+<?php include 'db_connect.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Manager</title>
+    <title>NU Student Portal | Home</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        :root {
-            --primary: #4a90e2;
-            --success: #27ae60;
-            --danger: #e74c3c;
-            --dark: #2c3e50;
-            --bg: #f4f7f6;
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background: linear-gradient(135deg, #002b5c, #001a33); 
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        /* Navbar Styling */
+        .custom-navbar { 
+            background: #003366 !important; 
+            padding: 1.2rem 0; 
+            border-bottom: 3px solid #FFCC00; 
+        }
+        .navbar-brand { font-size: 2rem; color: #FFCC00 !important; font-weight: 800; }
+        .nav-link { font-weight: 700; color: white !important; text-transform: uppercase; transition: 0.3s; }
+        .nav-link:hover { color: #FFCC00 !important; }
+
+        /* Hero Section */
+        .hero-section { padding: 6rem 0; text-align: center; color: white; }
+        .hero-title { font-size: 3.5rem; font-weight: 800; color: #FFCC00; margin-bottom: 1rem; }
+
+        /* Glass Cards */
+        .glass-card { 
+            background: rgba(255, 255, 255, 0.95); 
+            border-radius: 20px; 
+            padding: 2.5rem; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3); 
+            border: none;
+            transition: 0.3s ease;
+        }
+        .resource-card:hover { transform: translateY(-10px); border-bottom: 5px solid #FFCC00; }
+
+        /* Headers */
+        .section-header h2 { 
+            font-weight: 800; 
+            color: #003366; 
+            text-transform: uppercase; 
+            text-align: center;
+            margin-bottom: 2rem;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: var(--bg); color: var(--dark); line-height: 1.6; }
-        .container { max-width: 900px; margin: 40px auto; padding: 20px; }
-
-        header { text-align: center; margin-bottom: 30px; }
-        
-        /* Responsive Form Design */
-        .card { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 30px; }
-        .form-row { display: flex; gap: 20px; margin-bottom: 20px; }
-        .input-group { flex: 1; display: flex; flex-direction: column; }
-        
-        label { font-weight: bold; margin-bottom: 8px; }
-        input, select { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 16px; }
-
-        .btn-primary { background: var(--primary); color: white; border: none; padding: 12px; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; transition: 0.3s; }
-        .btn-primary:hover { background: #357abd; }
-
-        /* Responsive Table Styling */
-        .table-container { overflow-x: auto; }
-        table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
-        th, td { padding: 15px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: var(--dark); color: white; }
-
-        .action-links a { color: var(--primary); text-decoration: none; margin-right: 15px; font-weight: bold; }
-        .btn-del { color: var(--danger); background: none; border: none; cursor: pointer; font-weight: bold; font-size: 14px; }
-
-        /* Tablet/Mobile View (Responsive Requirement) */
-        @media (max-width: 768px) {
-            .form-row { flex-direction: column; }
-            .container { margin: 10px auto; }
+        /* Buttons */
+        .btn-nu { 
+            background: #003366; 
+            color: #FFCC00; 
+            font-weight: 700; 
+            padding: 0.8rem 2rem; 
+            border-radius: 50px; 
+            text-transform: uppercase;
+            border: 2px solid #003366;
+            transition: 0.3s;
         }
+        .btn-nu:hover { background: #FFCC00; color: #003366; border-color: #FFCC00; }
+
+        /* Footer */
+        footer { background: #001a33; color: white; padding: 3rem 0; border-top: 3px solid #FFCC00; }
+        .social-links a { color: #FFCC00; text-decoration: none; font-weight: 700; margin: 0 10px; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>My Personal Project Manager</h1>
-        <p>Dynamic CRUD Website using PHP & MySQL</p>
+    
+   <nav class="navbar navbar-expand-lg custom-navbar sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.php">NU PORTAL</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nuNav">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nuNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="actDrop" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Activities
+                        </a>
+                        <ul class="dropdown-menu shadow" aria-labelledby="actDrop">
+                            <li><a class="dropdown-item" href="syllabus.php">Syllabus</a></li>
+                            <li><a class="dropdown-item" href="NuStrategicGoal.php">Strategic Goals</a></li>
+                            <li><a class="dropdown-item" href="mission.php">Mission & Vision</a></li>
+                            <li><a class="dropdown-item" href="schedule.php">Schedule</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <header class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Welcome, Nationalians!</h1>
+            <p class="fs-4">Education that works. Nation-building through innovation.</p>
+        </div>
     </header>
 
-    <section class="card">
-        <h3>Add New Project</h3>
-        <form id="portfolioForm" action="process_create.php" method="POST" onsubmit="return validateForm()">
-            <div class="form-row">
-                <div class="input-group">
-                    <label for="title">Project Name</label>
-                    <input type="text" name="title" id="title" placeholder="e.g. Finance Tracker">
-                </div>
-                <div class="input-group">
-                    <label for="category">Category</label>
-                    <select name="category" id="category">
-                        <option value="">-- Select Category --</option>
-                        <option value="Web App">Web App</option>
-                        <option value="Mobile App">Mobile App</option>
-                        <option value="Design">Design</option>
-                    </select>
+    <main class="container mb-5">
+        <div class="section-header">
+            <h2 class="text-white">Student Resources</h2>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="glass-card resource-card h-100 text-center">
+                    <div class="display-4 mb-3">🎯</div>
+                    <h3>Strategic Goals</h3>
+                    <p>Discover how we aim to provide accessible quality education.</p>
+                    <a href="Schedule.php" class="btn btn-nu mt-auto">View Goals</a>
                 </div>
             </div>
-            <button type="submit" class="btn-primary">Add Project</button>
-        </form>
-    </section>
 
-    <section class="card">
-        <h3>Project List</h3>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Category</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    // Fetch data from MySQL
-                    $sql = "SELECT * FROM my_portfolio ORDER BY id DESC";
-                    $result = mysqli_query($conn, $sql);
+            <div class="col-md-4">
+                <div class="glass-card resource-card h-100 text-center">
+                    <div class="display-4 mb-3">🏛️</div>
+                    <h3>Identity</h3>
+                    <p>Learn about our core values and the heritage of Dynamic Filipinism.</p>
+                    <a href="mission.php" class="btn btn-nu mt-auto">Learn More</a>
+                </div>
+            </div>
 
-                    if (mysqli_num_rows($result) > 0) {
-                        while($row = mysqli_fetch_assoc($result)) {
-                            echo "<tr>";
-                            echo "<td>" . htmlspecialchars($row['title']) . "</td>";
-                            echo "<td>" . htmlspecialchars($row['category']) . "</td>";
-                            echo "<td class='action-links'>
-                                    <a href='edit.php?id=" . $row['id'] . "'>Edit</a>
-                                    <button class='btn-del' onclick='confirmDelete(" . $row['id'] . ")'>Delete</button>
-                                  </td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        echo "<tr><td colspan='3'>No projects found.</td></tr>";
-                    }
-                    ?>
-                </tbody>
-            </table>
+            <div class="col-md-4">
+                <div class="glass-card resource-card h-100 text-center">
+                    <div class="display-4 mb-3">📚</div>
+                    <h3>Curriculum</h3>
+                    <p>Track your academic progress and course requirements.</p>
+                    <a href="syllabus.php" class="btn btn-nu mt-auto">Open Syllabus</a>
+                </div>
+            </div>
         </div>
-    </section>
-</div>
 
-<script>
-    /**
-     * Client-side Validation
-     * Prevents empty submissions before they hit the server
-     */
-    function validateForm() {
-        const title = document.getElementById('title').value.trim();
-        const category = document.getElementById('category').value;
+        <div class="row mt-5">
+            <div class="col-lg-8 mx-auto">
+                <div class="glass-card">
+                    <div class="section-header">
+                        <h2>Connect With Us</h2>
+                    </div>
+                    <form action="process_connect.php" method="POST">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Full Name</label>
+                                <input type="text" name="full_name" class="form-control border-primary" placeholder="Juan Dela Cruz" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label fw-bold">Email Address</label>
+                                <input type="email" name="email" class="form-control border-primary" placeholder="juan@email.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Message</label>
+                            <textarea name="message" class="form-control border-primary" rows="4" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-nu w-100 py-3">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
 
-        if (title === "") {
-            alert("Please enter a project title.");
-            return false;
+    
+<footer>
+        <div class="container text-center">
+            <div class="social-links mb-3">
+                <a href="#">FACEBOOK</a> | <a href="#">GITHUB</a> | <a href="#">LINKEDIN</a>
+            </div>
+            <p class="mb-1">National University - Education that works.</p>
+            <p class="small opacity-75">&copy; 2026 NU Student Portal | Project by Canillo</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // 1. TYPING EFFECT for Hero Title
+        const heroTitle = document.querySelector('.hero-title');
+        const text = heroTitle.innerText;
+        heroTitle.innerText = '';
+        let i = 0;
+
+        function typeWriter() {
+            if (i < text.length) {
+                heroTitle.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+        typeWriter();
+
+        // 2. SCROLL REVEAL ANIMATION for Glass Cards
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.8s ease-out';
+            observer.observe(card);
+        });
+
+        // 3. FORM VALIDATION & UI FEEDBACK
+        const inquiryForm = document.querySelector('form[action="process_connect.php"]');
+        if(inquiryForm) {
+            inquiryForm.addEventListener('submit', function(e) {
+                const submitBtn = this.querySelector('button');
+                const emailInput = this.querySelector('input[name="email"]');
+                const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                
+                if (!emailInput.value.match(emailPattern)) {
+                    e.preventDefault();
+                    alert("Please enter a valid email address.");
+                    emailInput.focus();
+                    return;
+                }
+
+                submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Sending...';
+                submitBtn.style.pointerEvents = 'none';
+                submitBtn.style.opacity = '0.7';
+            });
         }
 
-        if (category === "") {
-            alert("Please choose a category from the dropdown.");
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * Interactivity: Delete Confirmation
-     * Protects against accidental data removal
-     */
-    function confirmDelete(id) {
-        if (confirm("Are you sure you want to delete this project?")) {
-            // Redirect to the PHP delete script
-            window.location.href = "process_delete.php?id=" + id;
-        }
-    }
-</script>
-
+        // 4. NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.custom-navbar');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 10px 30px rgba(0,0,0,0.5)';
+                nav.style.padding = '0.8rem 0';
+            } else {
+                nav.style.boxShadow = 'none';
+                nav.style.padding = '1.2rem 0';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
