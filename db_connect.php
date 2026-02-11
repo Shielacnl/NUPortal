@@ -1,7 +1,7 @@
 <?php
 $servername = "sql201.infinityfree.com"; // MySQL Hostname
 $username = "if0_41127983";            // MySQL Username
-$password = "VFAJSSWbWC";            // MySQL Password
+$password = "VFAJSSWbWC";            // MySQL Password (from your image)
 $dbname = "if0_41127983_nuportal";   // Database Name
 
 // Create connection
